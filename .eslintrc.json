@@ -22,6 +22,6 @@
     "no-undef": "error"
   },
   "globals": {
-    "proces": "readonly"
+    "process": "readonly"
   }
 }
