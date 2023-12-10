@@ -1,5 +1,5 @@
 // writing the schema for student interface(student.interface.ts)
-import { Schema } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import {
   Gaurdian,
   Student,
@@ -93,5 +93,11 @@ const studentSchema = new Schema<Student>({
   profileImg: { type: String },
   isActive: ['active', 'blocked'],
 });
-// 3. Create a Model.
+// 3. Create a Model out of abouce schema
 // const User = model<IUser>('User', userSchema);
+
+// here IUser is a interface/type ,which is model<Student>, student in our case ,which would be import
+// here schema name studentSchema
+export const StudentModel = model<Student>('Student', studentSchema);
+
+// pattern: interface first, then create schema out of that interface, then create model out of that schema, then make db_query out of that model

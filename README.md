@@ -1,0 +1,1 @@
+- run the project in development with: npm run start:dev

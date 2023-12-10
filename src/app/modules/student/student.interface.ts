@@ -1,21 +1,23 @@
-import { Schema, model, connect } from 'mongoose';
+export type Gaurdian = {
+  fatherName: string;
+  fatherOccupation: string;
+  fatherContactNo: string;
+  motherName: string;
+  motherOccupation: string;
+  motherContactNo: string;
+};
 
-export type Gaurdian={
-    fatherName: string,
-    fatherOccupation: string,
-    fatherContactNo: string
-    motherName: string,
-    motherOccupation: string,
-    motherContactNo: string
-  }
-
-export type UserName={ firstname: string; middlename: string; lastname: string };
-export type LocalGaurdian={
-  name:string;
-  occupation:string;
+export type UserName = {
+  firstname: string;
+  middlename: string;
+  lastname: string;
+};
+export type LocalGaurdian = {
+  name: string;
+  occupation: string;
   contactNo: string;
-  address:string
-}
+  address: string;
+};
 export type Student = {
   id: string;
   name: UserName;
@@ -24,12 +26,17 @@ export type Student = {
   email: string;
   contactNumber: string;
   emergencyContactNo: string;
-  bloodgroup?:'A+'|'B+'| 'A-' | 'B-' | 'AB' | 'O'; /*ekhne bld group(?) optional karon sbr ta jana nao thakte pare. jehetu blld grp predefined ejnno union use krbo */;
+  bloodgroup?:
+    | 'A+'
+    | 'B+'
+    | 'A-'
+    | 'B-'
+    | 'AB'
+    | 'O' /*ekhne bld group(?) optional karon sbr ta jana nao thakte pare. jehetu blld grp predefined ejnno union use krbo */;
   presentAddress: string;
   permanenttAddress: string;
   gaurdian: Gaurdian;
   localGaurdian: LocalGaurdian;
-  profileImg?: string/* pic deya ta optional */
-  isActive: 'active'|'inactive'
-
+  profileImg?: string /* pic deya ta optional */;
+  isActive: 'active' | 'inactive';
 };
